@@ -26,6 +26,9 @@ class Route:
         if len(handlers) > 0:
             self.handlers = self.handlers + list(handlers)
 
+    def handle(self):
+        for handler in self.handlers:
+            handler()
 
 class Router:
     routes: Dict[str, Route] = dict()
