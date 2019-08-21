@@ -38,10 +38,10 @@ class Router:
         self.add_route('GET',  url_pattern, first_handler,  *handlers)
 
     def find_route(self, url: str):
-        patterns = [r.regex for r in self.routes.values()]
-        for pattern in patterns:
-            if pattern.match(url):
-                return pattern
+        routes = [i[1] for i in self.routes.items()]
+        for route in routes:
+            if route.regex.match(url):
+                return route
 
 
 
