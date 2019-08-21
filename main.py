@@ -7,4 +7,7 @@ def hello_world():
 
 if __name__ == "__main__":
     router = Router()
-    router.add_route('GET', '',  hello_world, hello_world, hello_world)
+    router.add_route('GET', '/(?P<word>)',  hello_world, hello_world, hello_world)
+    route = router.find('/hello')
+    pass
+
